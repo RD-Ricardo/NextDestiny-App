@@ -1,0 +1,26 @@
+<div class="flex w-full h-lvh">
+    <div class="w-1/2 p-4 flex flex-col justify-start">
+        <h1 class="text-2xl font-bold">Finalizar Compra</h1>
+        <p class="text-gray-500">Preencha os campos abaixo para finalizar a compra</p>
+        <form class="space-y-4 flex flex-col w-full mt-2">
+            <mat-form-field appearance="outline">
+                <mat-label>Nome</mat-label>
+                <input matInput type="text">
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="text">
+                <mat-error>
+    
+                </mat-error>
+            </mat-form-field>
+    
+            <button mat-raised-button color="primary" (click)="checkout()">Finalizar Compra</button>
+        </form>
+    </div>
+
+    <div class="w-1/2 p-4  flex flex-col justify-start">
+        <h1 class="text-2xl font-bold">Destino</h1>
+        <p class="text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates sunt rem itaque numquam? Delectus praesentium voluptas illo, officia dolorum minima in atque, non excepturi amet maiores quaerat dolorem nemo? Ea.</p>
+    </div>
+</div>
