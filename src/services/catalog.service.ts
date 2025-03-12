@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ProductDto } from '../models/product';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CatalogService {
-
-  apiBaseUrl = 'http://localhost:3000/api/v1';
+  apiBaseUrl = `${environment.apiUrl}/catalog/api`;
 
   constructor(private httpClient: HttpClient) { }
 

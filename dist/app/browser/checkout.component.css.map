@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["checkout.component.css"],
+  "sourcesContent": [".mdc-notched-outline__notch { border-right: none; }\r\n\r\n"],
+  "mappings": ";AAAA,CAAA;AAA8B,gBAAA;AAAoB;",
+  "names": []
+}

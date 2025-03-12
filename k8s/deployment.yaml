@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: next-destiny-app
+spec:
+  selector:
+    matchLabels:
+      app: next-destiny-app
+  template:
+    metadata:
+      labels:
+        app: next-destiny-app
+    spec:
+      containers:
+        - name: next-destiny-app
+          imagePullPolicy: Always
+          image: rdricardo/next-destiny:front
+          ports:
+            - containerPort: 80
+      imagePullSecrets:
+        - name: docker-secrets
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: next-destiny-app
+spec:
+  selector:
+    app: next-destiny-app
+  ports:
+    - port: 3001
+      targetPort: 80

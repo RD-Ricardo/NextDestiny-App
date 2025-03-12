@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-next-destiny-app
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-app-prod
+spec:
+  tls:
+  - hosts:
+    - app-next-destiny.rdsolutions.digital
+
+    secretName: app-tls
+  rules:
+    - host: app-next-destiny.rdsolutions.digital
+      http:
+        paths:
+          - pathType: "Prefix"
+            path: "/"
+            backend:
+              service:
+                name: next-destiny-app
+                port:
+                  number: 3001

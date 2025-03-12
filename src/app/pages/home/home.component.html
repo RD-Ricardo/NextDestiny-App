@@ -1,19 +1,30 @@
-<div class="p-5">
- <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
-        <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">Nome: string</div>
-            <p class="text-gray-700 text-base">string</p>
-            
-            <p class="text-gray-700 text-base">Cidade: string</p>
-            <p class="text-gray-700 text-base">País: string</p>
-        </div>
-        <div class="flex justify-between p-6 items-center">
-            <div>
-                <p class="text-gray-700 text-base">R$ 0</p>
-            </div>
-            <button mat-raised-button color="primary" (click)="checkout('teste')">
-                Reservar agora
-            </button>
-        </div>
+<div class="p-5 flex gap-4 justify-center">
+
+    <div class="w-full flex justify-center" *ngIf="loading">
+        <mat-spinner></mat-spinner>
     </div>
-</div>
+       
+
+    <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white w-96" *ngFor="let product of products">
+   
+           <div>
+               <img [src]="product.images[0]" alt="" class="h-48 w-full object-cover">
+           </div>
+   
+           <div class="px-6 py-4">
+               <div class="font-bold text-xl mb-2">{{ product.name }}</div>
+               <p class="text-gray-700 text-base"> {{ product.description }} </p>
+               
+               <p class="text-gray-700 text-base mt-10">{{ product.location.city }}</p>
+               <p class="text-gray-700 text-base">{{ product.location.country }}</p>
+           </div>
+           <div class="flex justify-between p-6 items-center">
+               <div>
+                   <p class="text-gray-700 text-base">{{ product.price | currency: 'BRL' }}</p>
+               </div>
+               <button mat-raised-button color="primary" (click)="checkout(product.id)">
+                   Reservar agora
+               </button>
+           </div>
+       </div>
+   </div>

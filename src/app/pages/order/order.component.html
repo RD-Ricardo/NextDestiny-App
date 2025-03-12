@@ -1,1 +1,38 @@
-<p>order works!</p>
+
+
+<div class="w-full flex justify-center items-center mt-10">
+    <mat-stepper [selectedIndex]="currentStep" orientation="vertical" class="w-1/2">
+        <mat-step [completed]="currentStep > 0" [hasError]="errorMessage" errorMessage="Reserva de voo cancelada">
+          <ng-template matStepLabel>Reserva de Voo</ng-template>
+          <ng-template matStepContent>
+            <p *ngIf="!errorMessage">Reserva de voo bem-sucedida</p>
+            <p *ngIf="errorMessage">{{ errorMessage }}</p>
+          </ng-template>
+        </mat-step>
+        <mat-step [completed]="currentStep > 1" [hasError]="errorMessage" errorMessage="Falha na reserva do hotel">
+          <ng-template matStepLabel>Reserva de Hotel</ng-template>
+          <ng-template matStepContent>
+            <p *ngIf="!errorMessage">Reserva de hotel bem-sucedida</p>
+            <p *ngIf="errorMessage">{{ errorMessage }}</p>
+          </ng-template>
+        </mat-step>
+        <mat-step [completed]="currentStep > 2" [hasError]="errorMessage" errorMessage="Erro no pagamento">
+          <ng-template matStepLabel>Pagamento</ng-template>
+          <ng-template matStepContent>
+            <p *ngIf="!errorMessage">Pagamento bem-sucedido</p>
+            <p *ngIf="errorMessage">{{ errorMessage }}</p>
+          </ng-template>
+        </mat-step>
+    </mat-stepper>
+</div>
+
+<div class="w-full flex flex-col items-center justify-center mt-10">
+    <div class=" w-1/2">
+        <div *ngFor="let item of messages">
+            {{ item }}
+        </div>
+    </div>
+    <div  class="w-2/2 flex justify-center" *ngIf="!loading">
+      <mat-spinner></mat-spinner>
+  </div>
+</div>

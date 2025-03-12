@@ -1,0 +1,12 @@
+.error-step .mat-step-header {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.error-step .mat-step-header .mat-step-icon {
+    color: #721c24;
+}
+
+.error-step .mat-step-header .mat-step-label {
+    color: #721c24;
+}

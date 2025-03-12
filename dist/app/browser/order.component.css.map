@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["order.component.css"],
+  "sourcesContent": [".error-step .mat-step-header {\r\n    background-color: #f8d7da;\r\n    border-color: #f5c6cb;\r\n}\r\n\r\n.error-step .mat-step-header .mat-step-icon {\r\n    color: #721c24;\r\n}\r\n\r\n.error-step .mat-step-header .mat-step-label {\r\n    color: #721c24;\r\n}"],
+  "mappings": ";AAAA,CAAA,WAAA,CAAA;AACI,oBAAA;AACA,gBAAA;AACJ;AAEA,CALA,WAKA,CALA,gBAKA,CAAA;AACI,SAAA;AACJ;AAEA,CATA,WASA,CATA,gBASA,CAAA;AACI,SAAA;AACJ;",
+  "names": []
+}
